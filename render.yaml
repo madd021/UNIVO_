@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: univo-community
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn community_builders.wsgi:application"
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com,localhost,127.0.0.1"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://*.onrender.com,http://localhost:8000,http://127.0.0.1:8000"
+      - key: RAZORPAY_KEY_ID
+        value: "rzp_test_SWzT9bAFLwy2VR"
+      - key: RAZORPAY_KEY_SECRET
+        value: "wD1bo5d3aXMuhT8eXfjZfoZZ"

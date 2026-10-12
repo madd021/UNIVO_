@@ -245,12 +245,12 @@ class communityAdmins(models.Model):
 #chat
 class chat(models.Model):
     chatid=models.AutoField(primary_key=True)
-    senderid=models.IntegerField(max_length=50)
+    senderid=models.IntegerField()
     receiverid=models.IntegerField()#userid
     message=models.TextField(max_length=1000)
     image=models.ImageField(upload_to=chat_images_path, null=True, blank=True)
     senddt=models.DateTimeField(auto_now=True)
-    status=models.IntegerField(max_length=50)
+    status=models.IntegerField()
     shared_post=models.ForeignKey(post, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
