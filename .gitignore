@@ -11,7 +11,8 @@ env.bak/
 venv.bak/
 
 # Django
-db.sqlite3
+# db.sqlite3
+community_builders/db.sqlite3
 db.sqlite3-journal
 # media/
 staticfiles/
